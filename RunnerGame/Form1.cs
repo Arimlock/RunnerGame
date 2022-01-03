@@ -84,13 +84,19 @@ namespace RunnerGame
             FpsShower.Text = (fps).ToString();
         }
 
-        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.)
+            ConsoleKey key=ConsoleKey.A;
+            switch (e.KeyValue)
             {
-                case ConsoleKey.W:
+                case ((char)Keys.W):
+                    key = ConsoleKey.W;
+                    break;
+                case ((char)Keys.S):
+                    key = ConsoleKey.S;
                     break;
             }
+            ShowPlaying.Move(key, Dino);
         }
     }
 }
